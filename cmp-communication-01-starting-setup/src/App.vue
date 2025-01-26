@@ -3,16 +3,12 @@
     <h2>My Friends</h2>
     <ul>
       <friend-contact
-        name="Manuel Lopez"
-        phone-number="101234 5678 991"
-        email-address="manuel@localhost.com"
-        is-favorite="1"
-      ></friend-contact>
-      <friend-contact
-        name="Julie Jones"
-        phone-number=" 09876 543 221"
-        email-address="julie@localhost.com"
-        is-favorite="0"
+        v-for="friend in friends"
+        :key="friend.id"
+        :name="friend.name"
+        :phone-number="friend.phone"
+        :email-address="friend.email"
+        :is-favorite="friend.favorite"
       ></friend-contact>
     </ul>
   </section>
@@ -28,12 +24,14 @@ export default {
           name: "Manuel Lopez",
           phone: "101234 5678 991",
           email: "manuel@localhost.com",
+          favorite: true,
         },
         {
           id: "julie",
           name: "Julie Jones",
           phone: " 09876 543 221",
           email: "julie@localhost.com",
+          favorite: false,
         },
       ],
     };

@@ -28,18 +28,15 @@ export default {
       required: true,
     },
     isFavorite: {
-      type: String,
+      type: Boolean,
       required: false,
-      default: "0",
-      validator: function (value) {
-        return value === "1" || value === "0";
-      },
+      default: false,
     },
   },
   data() {
     return {
       detailsVisible: false,
-      friendFavorite: this.isFavorite === "1",
+      friendFavorite: this.isFavorite,
     };
   },
   methods: {
