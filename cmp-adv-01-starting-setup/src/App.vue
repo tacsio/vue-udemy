@@ -5,7 +5,9 @@
     <button @click="setSelectedComponent('manage-goals')">Manager Goals</button>
     <!-- <active-goals v-if="selectedComponent === 'active-goals'"></active-goals> -->
     <!-- <manage-goals v-else></manage-goals> -->
-    <component :is="selectedComponent"></component>
+    <keep-alive>
+      <component :is="selectedComponent"></component>
+    </keep-alive>
     <!-- <BadgeList /> -->
     <!-- <user-info :full-name="activeUser.name" :info-text="activeUser.description" :role="activeUser.role"></user-info> -->
     <!-- <course-goals>
